@@ -2,6 +2,8 @@ package br.com.aeon.controller;
 
 import java.util.List;
 
+import org.jboss.resteasy.reactive.ResponseStatus;
+
 import br.com.aeon.dto.CostumerRequestDTO;
 import br.com.aeon.entity.Costumer;
 import br.com.aeon.service.CostumerService;
@@ -27,6 +29,7 @@ public class CostumerController {
 	
 	@POST
 	@Transactional
+	@ResponseStatus(201)
 	public Costumer addCostumer(@Valid CostumerRequestDTO costumerDTO) {
 		return this.costumerService.addCostumer(costumerDTO);
 	}
