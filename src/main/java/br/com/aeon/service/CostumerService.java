@@ -22,8 +22,14 @@ public class CostumerService {
 		return costumer;
 	}
 
-	public Costumer updateCostumer(Costumer costumer) {
-		this.costumerRepository.persist(costumer);
+	public Costumer updateCostumer(Long id, Costumer costumer) {
+		Costumer costumerTemp = this.costumerRepository.findById(id);
+		costumerTemp.setName(costumer.getName());
+		costumerTemp.setLastName(costumer.getLastName());
+		costumerTemp.setAge(costumer.getAge());
+		costumerTemp.setEmail(costumer.getEmail());
+		
+		this.costumerRepository.persist(costumerTemp);
 		return costumer;
 	}
 	

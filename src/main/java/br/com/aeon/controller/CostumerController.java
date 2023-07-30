@@ -39,8 +39,9 @@ public class CostumerController {
 	
 	@PUT
 	@Transactional
-	public Costumer updateCostumer(Costumer costumer) {
-		return this.costumerService.updateCostumer(costumer);
+	@Path("/{id}")
+	public Costumer updateCostumer(Long id, Costumer costumer) {
+		return this.costumerService.updateCostumer(id, costumer);
 	}
 	
 	@DELETE
