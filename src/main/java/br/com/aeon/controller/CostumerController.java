@@ -44,6 +44,7 @@ public class CostumerController {
 	@DELETE
 	@Transactional
 	@Path("/{id}")
+	@ResponseStatus(204)
 	public void deleteCostumer(Long id) {
 		this.costumerService.deleteCostumer(id);
 	}
