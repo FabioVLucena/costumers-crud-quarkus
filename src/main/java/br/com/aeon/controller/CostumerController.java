@@ -20,7 +20,7 @@ import jakarta.ws.rs.Path;
 public class CostumerController {
 
 	@Inject
-	CostumerService costumerService;
+	private CostumerService costumerService;
 	
 	@GET
 	public List<Costumer> retrieveCostumers() {
